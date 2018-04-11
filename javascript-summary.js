@@ -39,6 +39,8 @@ ex2.printAll.apply({
 }, ['pickles', 'fridays'])
                 // APPLY outputs: turtles eat pickles a bit on fridays
 
+/*******************************************************************************/
+
 // currying
 
 function currySum(x) {
@@ -48,6 +50,8 @@ function currySum(x) {
 }
 
 currySum(1)(2)          // outputs: 3
+
+/*******************************************************************************/
 
 // const, let
 
@@ -60,6 +64,8 @@ try {
 } catch (e) {
   // no access to someConstant
 }
+
+/*******************************************************************************/
 
 // callbacks
 
@@ -77,6 +83,8 @@ doACall('hello!', (err, cb) => {
     //          true
   }
 })
+
+/*******************************************************************************/
 
 // promises
 
@@ -102,6 +110,8 @@ doACallPr(false)
   console.log(reject)
 })
 
+/*******************************************************************************/
+
 // async/await
 
 const doACallAs = async function (pass = true) {
@@ -125,6 +135,8 @@ try {
   console.log('done')
 }
 
+/*******************************************************************************/
+
 // map, filter, reduce
 
 const arr = ['a', 'b', 'c']
@@ -140,6 +152,8 @@ arr.filter((item) => {
 arr.reduce((lastItem, item) => {
   return lastItem + item
 })        // reduce outputs: abc
+
+/*******************************************************************************/
 
 // classes
 
@@ -181,11 +195,15 @@ const sc2 = new someClass(2)
 
 sc2.alpha                 // outputs: 2
 
+/*******************************************************************************/
+
 // destructuring
 
 [a, b, ...rest] = ['a', 'b', 'c', 'd', 'e']
 
 console.log(rest)         // outputs: ['c', 'd', 'e']
+
+/*******************************************************************************/
 
 // object spread (opposite of rest parameters)
 
@@ -196,6 +214,8 @@ function spread(a, b, c) {
 const colors = ['red', 'green', 'blue']
 
 console.log(spread(...colors))   // outputs: red then green then blue
+
+/*******************************************************************************/
 
 // rest parameters (opposite of object spread)
 
