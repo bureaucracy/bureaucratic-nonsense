@@ -10,6 +10,7 @@ function sort(arr) {
   let left = []
   let right = []
 
+  // o(n)
   for (let i = 0; i < arr.length; i++) {
     if (i < pivot) {
       left.push(arr[i])
@@ -18,6 +19,7 @@ function sort(arr) {
     }
   }
 
+  // o(log n)
   left = sort(left)
   right = sort(right)
 

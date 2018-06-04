@@ -12,40 +12,6 @@ test cases:
 [] => 0
 --
 
-first pass:
-
-```
-const removeDuplicates = function(nums) {
-    let h = {}
-    let newArr = []
-
-    nums.map((n) => {
-        if (!h[n] || h[n] < 2) {
-            if (!h[n]) {
-                h[n] = 0
-            }
-
-            h[n] += 1
-            newArr.push(n)
-        }
-    })
-
-    return newArr.length // returns 5
-};
-
-removeDuplicates([1, 1, 1, 2, 2, 3]) // 5
-removeDuplicates([4, 4, 5, 5, 5, 7, 8, 9, 9, 9, 2, 2]) // 10
-removeDuplicates([]) // 0
-```
-
-pros:
-- runs O(n)
-
-cons:
-- wastes an additional object and array
-
-second pass:
-
 ```
 const removeDuplicates = function(nums) {
     if (nums.length === 0) {
@@ -71,4 +37,3 @@ removeDuplicates([]) // 0
 
 pros:
 - runs O(n)
-- only relies on one object and no additional array

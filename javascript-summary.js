@@ -224,3 +224,19 @@ function rest(...args) {
 }
 
 rest('a', 'b', 'c')             // outputs: a b c
+
+/*******************************************************************************/
+
+// generators
+
+let i = 0
+
+function* gen(a = 0, b = 0) {
+  i += a + b + 5
+  console.log(i)
+  yield i
+}
+
+gen().next() // 5
+gen().next() // 10
+gen().next() // 15

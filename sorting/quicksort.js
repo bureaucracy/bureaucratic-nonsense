@@ -1,4 +1,4 @@
-let arr = [3, 14, 12, 11, 15, 2, 10, 4, 1, 7, 5, 6]
+let arr = [3, 14, 12, 11, 1, 7, 5, 6]
 
 function swap(arr, idx, end) {
   const temp = arr[idx]
@@ -9,6 +9,7 @@ function swap(arr, idx, end) {
 function sort(arr, start = 0, end = arr.length - 1) {
   if (start < end) {
     const p = partition(arr, start, end)
+    // o(log n)
     sort(arr, start, p - 1)
     sort(arr, p + 1, end)
   }
@@ -18,6 +19,8 @@ function sort(arr, start = 0, end = arr.length - 1) {
 function partition(arr, start, end) {
   // reset pivot index to the start of the new array
   let pivot = start
+
+  // o(n)
   for (let i = pivot; i <= end - 1; i++) {
     if (arr[i] <= arr[end]) {
       swap(arr, i, pivot)
